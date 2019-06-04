@@ -1,11 +1,21 @@
-import React from 'react';
-import './App.css';
+import React, { Component } from 'react';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+import './App.css';
+import AdminPageComponent from './components/AdminPageComponent';
+
+class App extends Component {
+  render() {
+      return (
+          <BrowserRouter>
+            <ul>
+              <li><Link to="/adminPage">Admin Page</Link></li>
+            </ul>
+            <Route exact path="/adminPage" component={AdminPageComponent}/>
+          </BrowserRouter>
+      );
+  }
+  
 }
 
 export default App;
